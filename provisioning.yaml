@@ -76,26 +76,16 @@
       src: templates/ntp_redhat.conf.j2
       dest: /etc/ntp.conf
     when: ansible_distribution == "CentOS"
+    notify:
+      - restart ntp service on centos
 
   - name: deploy ntp_debian.conf.j2 file to debian
     template:
       src: templates/ntp_debian.conf.j2
       dest: /etc/ntp.conf
     when: ansible_distribution == "Ubuntu"
-
-  - name: start ntp service on centos
-    service:
-      name: ntpd
-      state: restarted
-      enabled: yes
-    when: ansible_distribution == "CentOS"
-
-  - name: start ntp service on ubuntu
-    service:
-      name: ntp
-      state: restarted
-      enabled: yes
-    when: ansible_distribution == "Ubuntu"
+    notify:
+      - restart ntp service on ubuntu
 
   - name: create directory
     file:
@@ -107,6 +97,21 @@
     file:
       path: /opt/ansible_folder/ansible_file
       state: touch
+
+  handlers:
+  - name: restart ntp service on centos
+    service:
+      name: ntpd
+      state: restarted
+      enabled: yes
+    when: ansible_distribution == "CentOS"
+
+  - name: restart ntp service on ubuntu
+    service:
+      name: ntp
+      state: restarted
+      enabled: yes
+    when: ansible_distribution == "Ubuntu"
 
 
 
