@@ -7,10 +7,10 @@ filegen loopstats file loopstats type day enable
 filegen peerstats file peerstats type day enable
 filegen clockstats file clockstats type day enable
 
-pool 0.north-america.pool.ntp.org iburst
-pool 1.north-america.pool.ntp.org iburst
-pool 2.north-america.pool.ntp.org iburst
-pool 3.north-america.pool.ntp.org iburst
+pool {{ntp0}} iburst
+pool {{ntp1}} iburst
+pool {{ntp2}} iburst
+pool {{ntp3}} iburst
 
 # Use Ubuntu's ntp server as a fallback.
 pool ntp.ubuntu.com
