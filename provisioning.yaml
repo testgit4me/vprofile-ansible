@@ -103,7 +103,10 @@
       state: directory
       mode: 0777
 
-
+  - name: create touch file
+    file:
+      path: /opt/ansible_folder/ansible_file
+      state: touch
 
 
 
