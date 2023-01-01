@@ -1,0 +1,74 @@
+---
+- name: provision systems
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: update OS
+    command: yum update -y
+    when: ansible_distribution == "CentOS"
+
+  - name: install ntp on centos
+    yum:
+      name: "{{ item }}"
+      state: present
+    when: ansible_distribution == "CentOS"
+    loop:
+      - wget
+      - ntp
+      - mc
+
+  - name: install ntp on ubuntu
+    apt:
+      name: "{{ item }}"
+      state: present
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+    loop:
+      - wget
+      - tmux
+      - ntp
+
+  - name: start ntp service on centos
+    service:
+      name: ntpd
+      state: started
+      enabled: yes
+    when: ansible_distribution == "CentOS"
+
+  - name: start ntp service on ubuntu
+    service:
+      name: ntp
+      state: started
+      enabled: yes
+    when: ansible_distribution == "Ubuntu"
+
+  - name: create devopsteam groups
+    group:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - devopsteam
+      - group1
+      - group2
+      - devops
+
+  - name: create users
+    user:
+      name: devops
+      state: present
+      groups: devopsteam
+
+  - name: create users via variabless
+    user:
+      name: "{{ item }}"
+      state: present
+      groups: devops
+    loop: "{{user_list}}"
+
+
+
+
+
+
+
