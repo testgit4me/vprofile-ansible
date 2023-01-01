@@ -97,6 +97,13 @@
       enabled: yes
     when: ansible_distribution == "Ubuntu"
 
+  - name: create directory
+    file:
+      path: /opt/ansible_folder
+      state: directory
+      mode: 0777
+
+
 
 
 
