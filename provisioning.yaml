@@ -66,6 +66,10 @@
       groups: devops
     loop: "{{user_list}}"
 
+  - name: Banner file to /etc/motd
+    copy:
+      content: "this {{ansible_distribution}} is managed by Ansible"
+      dest: /etc/motd
 
 
 
