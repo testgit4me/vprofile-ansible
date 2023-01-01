@@ -68,7 +68,7 @@
 
   - name: Banner file to /etc/motd
     copy:
-      content: "this {{ansible_distribution}} is managed by Ansible"
+      content: "This {{ansible_distribution}} node is managed by Ansible. \n"
       dest: /etc/motd
 
 
