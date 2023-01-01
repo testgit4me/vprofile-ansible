@@ -75,13 +75,13 @@
     template:
       src: templates/ntp_redhat.conf.j2
       dest: /etc/ntp.conf
-    when: ansible_os_family == "RedHat"
+    when: ansible_distribution == "CentOS"
 
   - name: deploy ntp_debian.conf.j2 file to debian
     template:
       src: templates/ntp_debian.conf.j2
       dest: /etc/ntp.conf
-    when:
+    when: ansible_distribution == "Ubuntu"
 
   - name: start ntp service on centos
     service:
