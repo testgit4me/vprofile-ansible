@@ -66,7 +66,7 @@
 
 - name: deploy ntp_redhat.conf.j2 file to redhat
   template:
-    src: templates/ntp_redhat.conf.j2
+    src: ntp_redhat.conf.j2
     dest: "{{ntpconf}}"
   when: ansible_distribution == "CentOS"
   notify:
@@ -74,7 +74,7 @@
 
 - name: deploy ntp_debian.conf.j2 file to debian
   template:
-    src: templates/ntp_debian.conf.j2
+    src: ntp_debian.conf.j2
     dest: "{{ ntpconf }}"
   when: ansible_distribution == "Ubuntu"
   notify:
@@ -88,7 +88,7 @@
 
 - name: deploy dev file
   copy:
-    src: files/dev.txt
+    src: dev.txt
     dest: /opt/ansible_folder/dev.txt
 
 - name: create touch file
