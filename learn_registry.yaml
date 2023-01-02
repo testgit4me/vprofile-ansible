@@ -1,0 +1,15 @@
+---
+- name: learn registry
+  hosts: all
+  tasks:
+    name: To check the uptime of remote host command: uptime
+    register: uptime_var
+
+    name: To check free memory on remote host shell: free -m
+    register: free_var
+
+    debug:
+     var: uptime_var
+     #loop:
+      #stdout_lines
+      #stdout_lines
