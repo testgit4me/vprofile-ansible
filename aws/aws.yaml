@@ -5,7 +5,7 @@
   tasks:
     - name: create a new EC2 key pair, returns generated private key
       ec2_key:
-        name: keypair4
+        name: keypair
         region: us-east-1
       register: keyinfo
 
