@@ -2,8 +2,10 @@
 - name: learn registry
   hosts: web01
   tasks:
+
     - name: To check the uptime of remote host
       command: uptime
       register: uptime_output
-      debug:
-       var: uptime_output
+
+    - debug:
+        var: uptime_output
