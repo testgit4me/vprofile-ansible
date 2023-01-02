@@ -1,9 +1,12 @@
 ---
-- name: create EC2 Instance on AWS via
+- name: create EC2 Instance on AWS via Ansible
   hosts: localhost
   gather_facts: false
   tasks:
     - name: create a new EC2 key pair, returns generated private key
       ec2_key:
-        name: my_keypair
+        name: keypair
         region: us-east-1
+        register: keyInfo
+    - debug: 
+        vars: keyInfo

@@ -8,4 +8,4 @@
       register: uptime_reg_info
 
     - debug:
-        var: uptime_reg_info.stdout
+        var: uptime_reg_info
