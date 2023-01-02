@@ -21,10 +21,10 @@
 
     - name: start multiple instances
       ec2_instance:
-        key_name: keypair
+        key_name: "keypair"
         instance_type: t2.micro
-        image: ami-0b5eea76982371e91
-        exact_count: 1
+        image_id: ami-0b5eea76982371e91
+        count: 1
         region: us-east-1
         tags:
           foo: bar
