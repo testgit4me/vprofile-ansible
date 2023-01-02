@@ -9,6 +9,7 @@
         ntp1: 1.europe.pool.ntp.org
         ntp2: 2.europe.pool.ntp.org
         ntp3: 3.europe.pool.ntp.org
+      when: ansible_distribution == "CentOS"
 
 
 
