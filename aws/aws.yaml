@@ -9,11 +9,12 @@
         region: us-east-1
       register: keyinfo
 
-    - name: Print key
-      debug:
-        var: keyinfo
+   # - name: Print key
+   #   debug:
+   #    var: keyinfo
 
     - name: save keypair.pem
       copy:
         content: "{{keyinfo.key.private_key}}"
         dest: ./keypair.pem
+      when: keyinfo.changed
