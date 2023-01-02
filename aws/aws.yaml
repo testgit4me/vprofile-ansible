@@ -18,3 +18,13 @@
         content: "{{keyinfo.key.private_key}}"
         dest: ./keypair.pem
       when: keyinfo.changed
+
+    - name: start EC2 instance
+      ec2_instance:
+        name: "web-ans"
+        key_name: "keypair"
+        instance_type: t2.micro
+        image_id: ami-0b5eea76982371e91
+        count: 1
+        region: us-east-1
+        state: present
