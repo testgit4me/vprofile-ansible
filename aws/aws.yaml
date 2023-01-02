@@ -5,14 +5,15 @@
   tasks:
     - name: create a new EC2 key pair, returns generated private key
       ec2_key:
-        name: keypair3
+        name: keypair4
         region: us-east-1
       register: keyinfo
 
-    - debug:
-        var: keyinfo.key.private_key
+    - name: Print key
+      debug:
+        var: keyinfo
 
     - name: save keypair.pem
       copy:
-        content: "{{ keyInfo.key.private_key }}"
-        dest: keypair.pem
+        content: "{{keyinfo.key.private_key}}"
+        dest: ./keypair.pem
