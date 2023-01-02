@@ -1,10 +1,10 @@
 project - tasks
 
-1.ansible node
+1.ansible - ubuntu
 
-1.web01
-2.web02
-3.DB01
+1.web01 - centos
+2.web02 - ubuntu
+3.DB01 - centos
 
 ssh-key.pem
 inventory
@@ -12,16 +12,6 @@ playbook-web.yaml
 ansible.cfg
 
 ******************************************
-install ansible
-
-#!/bin/bash
-sudo apt update -y
-sudo apt install software-properties-common -y
-sudo add-apt-repository --yes --update ppa:ansible/ansible
-sudo apt install ansible -y
-
-******************************************
-
 inventory file
 
 web01 ansible_host=172.31.87.251
@@ -288,6 +278,17 @@ tell about ansible in interview process - via storytelling/scenarious
 - private key
 
 
+*********************
+-roles
+-aws modul 
+
+**********************
+tree
+var: ntp path jarattiq
+vim files/dev.txt
+deploy dev file
+
+mkdir roles -> ansible-galaxy init post-install
 
 
 

@@ -1,12 +1,10 @@
-web01 ansible_host=172.31.94.58
-web02 ansible_host=172.31.86.188
-db01 ansible_host=172.31.86.146 
-web03 ansible_host=172.31.80.136 ansible_user=ubuntu
+web01 ansible_host=172.31.82.217
+web02 ansible_host=172.31.93.28 ansible_user=ubuntu
+db01 ansible_host=172.31.80.244
 
 [websrv]
 web01
 web02
-web03
 
 [dbsrv]
 db01
@@ -14,7 +12,6 @@ db01
 [dc01:children]
 websrv
 dbsrv
-
 
 [dc01:vars]
 ansible_user=centos
