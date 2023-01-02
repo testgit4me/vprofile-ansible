@@ -2,7 +2,9 @@
 - name: provision systems
   hosts: all
   become: yes
+  gather_facts: false
   roles:
+    - role: geerlingguy.java
     - role: post-install
       vars:
         ntp0: 0.usa.pool.ntp.org
