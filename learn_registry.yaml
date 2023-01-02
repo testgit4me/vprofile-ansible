@@ -5,7 +5,7 @@
 
     - name: To check the uptime of remote host
       command: uptime
-      register: uptime_output
+      register: uptime_reg_info
 
     - debug:
-        var: uptime_output
+        var: uptime_reg_info
