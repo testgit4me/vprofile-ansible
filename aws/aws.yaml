@@ -19,15 +19,19 @@
         dest: ./keypair.pem
       when: keyinfo.changed
 
-    - name: start multiple instances
-      ec2_instance:
-        key_name: "keypair"
+    - ec2:
+        key_name: keypair
         instance_type: t2.micro
-        image_id: ami-0574da719dca65348
-        count: 1
+        image: ami-0574da719dca65348
         region: us-east-1
-        tags:
-          foo: bar
+        wait: yes
+        exact_count: 1
+        instance_tags:
+          Name: db01
+          db: postgres
+        count_tag:
+          Name: db01
+          db: postgres
 
  
 

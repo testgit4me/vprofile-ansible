@@ -7,16 +7,16 @@ pip install boto -y
 
 ansible-playbook aws.yaml
 
-    - ec2:
-        key_name: keypair
+
+
+
+
+              - name: start multiple instances
+      ec2_instance:
+        key_name: "keypair"
         instance_type: t2.micro
-        image: ami-0b5eea76982371e91
+        image_id: ami-0574da719dca65348
+        count: 1
         region: us-east-1
-        wait: yes
-        exact_count: 1
-        instance_tags:
-          Name: db01
-          db: postgres
-        count_tag:
-          Name: db01
-          db: postgres
+        tags:
+          foo: bar
