@@ -2,7 +2,6 @@
 - name: provision systems
   hosts: all
   become: yes
-  gather_facts: false
   roles:
     - role: geerlingguy.java
     - role: post-install
@@ -11,7 +10,6 @@
         ntp1: 1.usa.pool.ntp.org
         ntp2: 2.usa.pool.ntp.org
         ntp3: 3.usa.pool.ntp.org
-      when: ansible_distribution == "CentOS"
 
 
 
