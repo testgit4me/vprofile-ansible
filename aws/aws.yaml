@@ -25,12 +25,12 @@
         image: ami-0574da719dca65348
         region: us-east-1
         wait: yes
-        exact_count: 1
+        exact_count: 2
         instance_tags:
-          Name: db01
+          Name: db02
           db: postgres
         count_tag:
-          Name: db01
+          Name: db02
           db: postgres
 
  
