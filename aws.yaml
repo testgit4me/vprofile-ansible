@@ -1,0 +1,8 @@
+---
+- name: create EC2 Instance on AWS via
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: create a new EC2 key pair, returns generated private key
+      ec2_key:
+        name: my_keypair
