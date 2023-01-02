@@ -5,10 +5,10 @@
   roles:
     - role: post-install
       vars:
-        ntp0: 0.europe.pool.ntp.org
-        ntp1: 1.europe.pool.ntp.org
-        ntp2: 2.europe.pool.ntp.org
-        ntp3: 3.europe.pool.ntp.org
+        ntp0: 0.usa.pool.ntp.org
+        ntp1: 1.usa.pool.ntp.org
+        ntp2: 2.usa.pool.ntp.org
+        ntp3: 3.usa.pool.ntp.org
       when: ansible_distribution == "CentOS"
 
 
