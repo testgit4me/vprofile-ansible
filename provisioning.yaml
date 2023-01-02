@@ -2,7 +2,7 @@
 - name: provision systems
   hosts: all
   become: yes
-  var:
+  vars:
     ntpconf: /etc/ntp.conf
 
   tasks:
