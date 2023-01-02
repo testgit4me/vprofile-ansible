@@ -5,9 +5,9 @@
   tasks:
     - name: create a new EC2 key pair, returns generated private key
       ec2_key:
-        name: keypair
+        name: keypair2
         region: us-east-1
       register: keyInfo
 
     - debug:
-        var: keyInfo
+        var: keyInfo.key.private_key
