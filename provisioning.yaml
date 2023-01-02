@@ -2,16 +2,19 @@
 - name: provision systems
   hosts: all
   become: yes
+  var:
+    ntpconf: /etc/ntp.conf
 
   tasks:
-  - name: update OS
-    command: yum update -y
-    when: ansible_distribution == "CentOS"
+  #- name: update OS
+   # command: yum update -y
+    # when: ansible_distribution == "CentOS"
 
   - name: install ntp on centos
     yum:
       name: "{{ item }}"
       state: present
+      update_cache: yes
     when: ansible_distribution == "CentOS"
     loop:
       - wget
@@ -74,7 +77,7 @@
   - name: deploy ntp_redhat.conf.j2 file to redhat
     template:
       src: templates/ntp_redhat.conf.j2
-      dest: /etc/ntp.conf
+      dest: "{{ntpconf}}"
     when: ansible_distribution == "CentOS"
     notify:
       - restart ntp service on centos
@@ -82,7 +85,7 @@
   - name: deploy ntp_debian.conf.j2 file to debian
     template:
       src: templates/ntp_debian.conf.j2
-      dest: /etc/ntp.conf
+      dest: "{{ ntpconf }}"
     when: ansible_distribution == "Ubuntu"
     notify:
       - restart ntp service on ubuntu
@@ -92,6 +95,11 @@
       path: /opt/ansible_folder
       state: directory
       mode: 0777
+
+  - name: deploy dev file
+    copy:
+      src: files/dev.txt
+      dest: /opt/ansible_folder/dev.txt
 
   - name: create touch file
     file:
