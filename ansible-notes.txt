@@ -174,6 +174,8 @@ ansible -m setup web01
 
 ********************************************************
 
+26283 1773073
+
 ansible.cfg
 
 [defaults]
@@ -198,6 +200,8 @@ Moduls:
 - service
 - copy
 - maria-db
+- file
+
 
 ******************
 string -> list -> dictionary
@@ -266,11 +270,22 @@ NTP install: systema centos/ubuntu
 1.4 ustanovka via Python
 
 - loop
-- update_cache
+- update_cache: yes
 - added group via modul
 - added 4 user via model with loop
 - added 4 user via model with loop using group_vars/all variables
 
+-----------------
+copy content modul/motd
+template modul, j2 fail, ntp_redhat.conf, ntp_debian.conf
+handler (notify)
+
+
+tell about ansible in interview process - via storytelling/scenarious
+- pipeline -> modules
+- inventory file
+- ansible config file
+- private key
 
 
 
