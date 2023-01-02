@@ -6,3 +6,4 @@
     - name: create a new EC2 key pair, returns generated private key
       ec2_key:
         name: my_keypair
+        region: us-east-1
