@@ -21,6 +21,7 @@
 
     - name: start multiple instances
       ec2_instance:
+        key_name: keypair
         instance_type: t2.micro
         image: ami-0b5eea76982371e91
         exact_count: 1
