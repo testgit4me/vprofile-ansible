@@ -19,18 +19,19 @@
         dest: ./keypair.pem
       when: keyinfo.changed
 
-    - ec2:
+    - name: create EC2 Instance
+      ec2:
         key_name: keypair
         instance_type: t2.micro
         image: ami-0574da719dca65348
         region: us-east-1
         wait: yes
-        exact_count: 2
+        exact_count: 1
         instance_tags:
           Name: db02
           db: postgres
         count_tag:
-          Name: db02
+          Name: db01
           db: postgres
 
  
