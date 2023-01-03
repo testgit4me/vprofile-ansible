@@ -11,7 +11,7 @@
       update_cache: yes
     loop:
       - git
-      - java-1.8.0-openjdk
+      - openjdk-8-jdk
       - maven
 
   - name: Clone a github repository
