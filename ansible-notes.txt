@@ -290,6 +290,7 @@ deploy dev file
 
 mkdir roles -> ansible-galaxy init post-install
 
+<<<<<<< HEAD
 moded all the variabless -> defaults/main.yaml
 modev tasks to tasks
 moved handlers to hadlers
@@ -312,6 +313,41 @@ source .bashrc
 ec2_key module � Create or delete an EC2 key pair
 pip
 boto3
+=======
+**************************************************
+0.ansible-control - ubuntu - ustanovka ansible
+
+1. zborka(centos node)  
+1.1 - simple index file
+2.1 prod (centos node) - ustanovaka gninx
+
+-----------------
+
+1. zborka(centos node) - ustanova maven, 
+1.2 нужен java-app
+2.2 prod (centos node) - ustanovaka tomcat
+-------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 110c60f10b4f72bd8aec4cf32e97235d4e48b319
 
 
 

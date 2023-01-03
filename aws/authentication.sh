@@ -1,22 +1,9 @@
-#!/bin/bash
+IAM admin user
+export AWS_ACCESS_KEY_ID='AK123'
+export AWS_SECRET_ACCESS_KEY='abc123'
 echo "qeqwew" > ~/.bashrc
 source .bashrc
 apt install python3-pip -y
-pip install boto3 -y
-pip install boto -y
+pip install boto3
+pip install boto
 
-ansible-playbook aws.yaml
-
-
-
-
-
-              - name: start multiple instances
-      ec2_instance:
-        key_name: "keypair"
-        instance_type: t2.micro
-        image_id: ami-0574da719dca65348
-        count: 1
-        region: us-east-1
-        tags:
-          foo: bar
