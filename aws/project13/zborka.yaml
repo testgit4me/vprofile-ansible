@@ -16,6 +16,12 @@
       - tmux
       - mc
 
+  - name: Clone a github repository
+    git:
+      clone: yes
+      repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+      dest: /opt/boxfuse
+
   #- name: git clone
   #- name: maven zborka java prilojenie and i will have artifact
   #- name: deploy artfact to prod
