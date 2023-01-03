@@ -1,0 +1,10 @@
+---
+- name: zborka server
+  hosts: zborka
+  become: yes
+
+  tasks:
+    - name: copy index.html
+      copy:
+        - src: ./index.html
+        - dest: /opt
