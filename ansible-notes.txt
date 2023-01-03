@@ -290,7 +290,28 @@ deploy dev file
 
 mkdir roles -> ansible-galaxy init post-install
 
+moded all the variabless -> defaults/main.yaml
+modev tasks to tasks
+moved handlers to hadlers
+modev files to files
+modev templates to template
 
+cleaned provision.yaml and added roles
+cleaned parent directory names that no need when you use roles
+
+galaxy ansible
+ntp
+nrpe server
+java - download it -> ansible-galaxy install geerlingguy.java
+
+register = this is some information about a task
+*************************************************
+ansadmin -> aws iam
+nano .bashrc 
+source .bashrc 
+ec2_key module – Create or delete an EC2 key pair
+pip
+boto3
 
 
 
