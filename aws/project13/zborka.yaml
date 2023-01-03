@@ -4,7 +4,7 @@
   become: yes
 
   tasks:
-    - name: copy index.html
-      copy:
-        - src: ./index.html
-        - dest: /opt
+  - name: copy index.html file
+    copy:
+      src: index.html
+      dest: /opt
