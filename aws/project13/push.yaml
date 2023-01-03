@@ -46,9 +46,9 @@
           Name: prod
           db: postgres
 
-    # Build artifact
-    - include_tasks: build.yaml
+    - name: Build artifact
+      include: build.yaml
 
-    # Deploy artifact
-    - include_tasks: prod.yaml
+    - name: Deploy artifact
+      include: prod.yaml
 
