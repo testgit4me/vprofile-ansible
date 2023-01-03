@@ -47,8 +47,8 @@
           db: postgres
 
     - name: Build artifact
-      include: build.yaml
+      import_playbook: build.yaml
 
     - name: Deploy artifact
-      include: prod.yaml
+      import_playbook: prod.yaml
 
