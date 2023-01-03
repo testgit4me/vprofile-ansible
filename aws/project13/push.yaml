@@ -2,6 +2,8 @@
   connection: local
   gather_facts: False
   tasks:
+
+    # configure Environment
     - name: create a new EC2 key pair, returns generated private key
       ec2_key:
         name: keypair
@@ -43,4 +45,10 @@
         count_tag:
           Name: prod
           db: postgres
+
+     # Build artifact
+     - include_tasks: build.yml
+
+     # Deploy artifact
+     - include_tasks: prod.yml
 
