@@ -4,7 +4,19 @@
   become: yes
 
   tasks:
-  - name: copy index.html file
-    copy:
-      src: index.html
-      dest: /opt
+  - name: install git, java, maven, tmux, mc
+    yum:
+      name: "{{ item }}"
+      state: present
+      update_cache: yes
+    loop:
+      - git
+      - java-1.8.0-openjdk
+      - maven
+      - tmux
+      - mc
+
+  #- name: git clone
+  #- name: maven zborka java prilojenie and i will have artifact
+  #- name: deploy artfact to prod
+  

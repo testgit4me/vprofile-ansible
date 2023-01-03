@@ -1,0 +1,7 @@
+---
+- name: prod zerver
+  hosts: prod
+  become: yes
+
+  tasks:
+    - name: install tomcat
