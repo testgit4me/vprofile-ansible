@@ -303,21 +303,7 @@ mkdir roles -> ansible-galaxy init post-install
 1.2 нужен java-app
 2.2 prod (centos node) - ustanovaka tomcat
 -------------------
-git --version
-git config --list
-git config --list --show-origin
-git config --global user.name "John Doe"
-git config --global user.email johndoe@example.com
-git config --global --list
-git init
-git add .
-git commit -m "first commit"
-git push
-git remote -v
-git branch -b NewBranch
-git branch (lists local branches)
-git branch -a (lists all - local and remote branches)
-git checkout NewBranch
+
 
 
 
