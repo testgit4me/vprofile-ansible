@@ -23,16 +23,17 @@
       ec2:
         key_name: keypair
         instance_type: t2.micro
-        image: ami-0574da719dca65348
+        image: ami-002070d43b0a4f171
         region: us-east-1
         wait: yes
         exact_count: 1
         instance_tags:
-          Name: db02
+          Name: web
           db: postgres
         count_tag:
-          Name: db01
+          Name: web
           db: postgres
+
 
  
 

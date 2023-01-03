@@ -13,3 +13,4 @@ git branch -b Private
 git branch (lists local branches)
 git branch -a (lists all - local and remote branches)
 git checkout NewBranch
+git diff

@@ -13,3 +13,33 @@
         content: "{{keyinfo.key.private_key}}"
         dest: ./keypair.pem
       when: keyinfo.changed
+      
+    - name: create EC2 Instance
+      ec2:
+        key_name: keypair
+        instance_type: t2.micro
+        image: ami-002070d43b0a4f171
+        region: us-east-1
+        wait: yes
+        exact_count: 1
+        instance_tags:
+          Name: zborka
+          db: postgres
+        count_tag:
+          Name: zborka
+          db: postgres
+
+    - name: create EC2 Instance
+      ec2:
+        key_name: keypair
+        instance_type: t2.micro
+        image: ami-002070d43b0a4f171
+        region: us-east-1
+        wait: yes
+        exact_count: 1
+        instance_tags:
+          Name: prod
+          db: postgres
+        count_tag:
+          Name: prod
+          db: postgres
