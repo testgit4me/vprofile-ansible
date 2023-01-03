@@ -1,10 +1,10 @@
-zborka ansible_host=172.31.93.113
-prod ansible_host=172.31.91.179
+build ansible_host=172.31.95.99
+prod ansible_host=172.31.88.4
 
 [servers]
-zborka
+build
 prod
 
 [servers:vars]
-ansible_user=centos
+ansible_user=ubuntu
 ansible_ssh_private_key_file=keypair.pem
