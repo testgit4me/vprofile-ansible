@@ -18,22 +18,22 @@
       ec2:
         key_name: keypair
         instance_type: t2.micro
-        image: ami-002070d43b0a4f171
+        image: ami-0a6b2839d44d781b2
         region: us-east-1
         wait: yes
         exact_count: 1
         instance_tags:
-          Name: zborka
+          Name: Build
           db: postgres
         count_tag:
-          Name: zborka
+          Name: Build
           db: postgres
 
     - name: create EC2 Instance
       ec2:
         key_name: keypair
         instance_type: t2.micro
-        image: ami-002070d43b0a4f171
+        image: ami-0a6b2839d44d781b2
         region: us-east-1
         wait: yes
         exact_count: 1

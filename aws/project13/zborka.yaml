@@ -4,8 +4,8 @@
   become: yes
 
   tasks:
-  - name: install git, java, maven, tmux, mc
-    yum:
+  - name: install git, java and maven
+    apt:
       name: "{{ item }}"
       state: present
       update_cache: yes
@@ -13,8 +13,6 @@
       - git
       - java-1.8.0-openjdk
       - maven
-      - tmux
-      - mc
 
   - name: Clone a github repository
     git:
