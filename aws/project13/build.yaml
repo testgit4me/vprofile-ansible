@@ -1,6 +1,6 @@
 ---
-- name: zborka server
-  hosts: zborka
+- name: build server
+  hosts: build
   become: yes
 
   tasks:
