@@ -46,9 +46,9 @@
           Name: prod
           db: postgres
 
-    - name: Build artifact
-      import_tasks: build.yaml
+    #- name: Build artifact
+    #  import_tasks: build.yaml
 
-    - name: Deploy artifact
-      import_tasks: prod.yaml
+    #- name: Deploy artifact
+    #  import_tasks: prod.yaml
 
