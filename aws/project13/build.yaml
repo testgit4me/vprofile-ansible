@@ -23,6 +23,12 @@
   - name: create artifact
     command: mvn -f /opt/boxfuse/pom.xml package
 
+  - name: fetch artifact
+    fetch:
+      src: /opt/boxfuse/target/hello-1.0.war
+      dest: .
+      flat: yes
+
   #- name: git clone
   #- name: maven zborka java prilojenie and i will have artifact
   #- name: deploy artfact to prod
