@@ -20,6 +20,9 @@
       repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
       dest: /opt/boxfuse
 
+  - name: create artifact
+    command: mvn -f /opt/boxfuse/pom.xml package
+
   #- name: git clone
   #- name: maven zborka java prilojenie and i will have artifact
   #- name: deploy artfact to prod
