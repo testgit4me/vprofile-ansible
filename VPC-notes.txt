@@ -1,0 +1,2 @@
+stateless - outbound rule needs to be allowed automatically
+staefull - outbound traffic allowed automatically
