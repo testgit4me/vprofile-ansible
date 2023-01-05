@@ -8,3 +8,5 @@ wget https://www.tooplate.com/zip-templates/2119_gymso_fitness.zip
 unzip -o 2119_gymso_fitness.zip
 cp -r 2119_gymso_fitness/* /var/www/html/
 systemctl restart httpd
+
+ls /var/www/html/
