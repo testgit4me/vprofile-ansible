@@ -1,6 +1,6 @@
 #!/bin/bash
 yum update -y
-yum install httpd wget unzip -y
+yum install httpd wget unzip tmux -y
 systemctl start httpd
 systemctl enable httpd
 cd /tmp/
