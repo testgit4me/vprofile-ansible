@@ -10,3 +10,11 @@ cp -r 2119_gymso_fitness/* /var/www/html/
 systemctl restart httpd
 
 ls /var/www/html/
+
+[client]
+port = 3306
+
+[mysqld]
+bind-address = 0.0.0.0
+port = 3306
+
